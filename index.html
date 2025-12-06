@@ -15,12 +15,11 @@
     overflow: hidden;
   }
 
-  /* Conteneur qui coupe l'intérieur = le vrai secret */
   #crop {
     position: relative;
     width: 100%;
-    height: 100vh;     /* Toujours la taille du téléphone / écran */
-    overflow: hidden;  /* Coupe le haut et le bas -> cache la bannière */
+    height: 100vh;
+    overflow: hidden;
   }
 
   iframe {
@@ -29,19 +28,19 @@
     border: none;
   }
 
-  /* 🟦 ORDINATEUR : petit décalage propre */
+  /* 🟦 ORDINATEUR */
   @media (min-width: 769px) {
     iframe {
-      top: -50px;      /* ajuste pour cacher la bannière sans manger le haut */
-      height: 120vh;   /* assez grand pour compenser */
+      top: -160px; /* coupe la zone tampon haute */
+      height: calc(100vh + 300px); /* coupe la zone basse + bannière */
     }
   }
 
-  /* 🟩 MOBILE : ajuste uniquement pour mobile */
+  /* 🟩 MOBILE */
   @media (max-width: 768px) {
     iframe {
-      top: -110px;     /* cache la bannière sans zoomer ni couper le haut */
-      height: 160vh;   /* évite de couper le bas */
+      top: -140px; /* compensation téléphone */
+      height: calc(100vh + 350px); /* évite coupure du bas */
     }
   }
 
@@ -51,7 +50,7 @@
 <body>
 
 <div id="crop">
-  <iframe src="https://rk7arn-my-site-9ya48e6c-smarttlelearning.wix-vibe.com/"></iframe>
+  <iframe src="https://1a4scn-my-site-9ya48e6c-smarttlelearning.wix-vibe.com/"></iframe>
 </div>
 
 </body>
