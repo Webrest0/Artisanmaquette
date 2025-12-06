@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <title>Artisan Pro</title>
 
-<!-- Affichage normal sur téléphone -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
@@ -15,26 +14,33 @@
     overflow: hidden;
   }
 
-  iframe {
+  #frame-container {
     width: 100%;
     height: 100vh;
-    border: none;
+    overflow: hidden;
+    position: relative;
   }
 
-  /* 🟦 MASQUE SPÉCIAL POUR TÉLÉPHONE
-     Cache seulement le bas de l'écran -> la bannière Wix Vibe
-     Ne s'applique PAS sur ordinateur.
-  */
+  iframe {
+    width: 100%;
+    height: 120vh;    /* plus grand que l'écran */
+    border: none;
+    position: absolute;
+    left: 0;
+  }
+
+  /* 🟦 Desktop : petit décalage pour cacher la bannière */
+  @media (min-width: 769px) {
+    iframe {
+      top: -40px;     /* ajuste selon ton écran */
+    }
+  }
+
+  /* 🟩 Mobile : gros décalage pour cacher la bannière sans zoomer */
   @media (max-width: 768px) {
-    .mobile-mask {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 70px; /* augmente si la bannière est plus haute */
-      background: white;
-      z-index: 9999;
-      pointer-events: none;
+    iframe {
+      top: -120px;    /* valeur adaptée pour téléphone */
+      height: 150vh;  /* plus grand pour compenser */
     }
   }
 </style>
@@ -42,14 +48,9 @@
 </head>
 <body>
 
-<!-- IFRAME : affichage normal -->
-<iframe 
-  src="https://rk7arn-my-site-9ya48e6c-smarttlelearning.wix-vibe.com/" 
-  allowfullscreen>
-</iframe>
-
-<!-- MASQUE visible UNIQUEMENT sur téléphone -->
-<div class="mobile-mask"></div>
+<div id="frame-container">
+  <iframe src="https://rk7arn-my-site-9ya48e6c-smarttlelearning.wix-vibe.com/"></iframe>
+</div>
 
 </body>
 </html>
