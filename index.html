@@ -8,6 +8,7 @@
 
 <style>
 
+  /* 🔒 Supprime toute marge interne */
   html, body {
     margin: 0;
     padding: 0;
@@ -15,6 +16,7 @@
     overflow: hidden;
   }
 
+  /* 🖼️ Conteneur qui affiche uniquement la zone visible */
   #crop {
     position: relative;
     width: 100%;
@@ -22,25 +24,26 @@
     overflow: hidden;
   }
 
+  /* 🌐 L'iframe contenant ton site Wix */
   iframe {
     position: absolute;
     width: 100%;
     border: none;
   }
 
-  /* 🟦 ORDINATEUR */
+  /* 🖥️ ORDINATEUR */
   @media (min-width: 769px) {
     iframe {
-      top: -160px; /* coupe la zone tampon haute */
-      height: calc(100vh + 300px); /* coupe la zone basse + bannière */
+      top: -260px; /* coupe le haut (tampon + header) */
+      height: calc(100vh + 420px); /* coupe le bas (footer + bannière) */
     }
   }
 
-  /* 🟩 MOBILE */
+  /* 📱 MOBILE */
   @media (max-width: 768px) {
     iframe {
-      top: -140px; /* compensation téléphone */
-      height: calc(100vh + 350px); /* évite coupure du bas */
+      top: -190px; /* coupe moins haut */
+      height: calc(100vh + 480px); /* coupe plus bas */
     }
   }
 
@@ -49,11 +52,10 @@
 </head>
 <body>
 
+<!-- 🖼️ Ton site Wix proprement recadré -->
 <div id="crop">
   <iframe src="https://emu4ac-my-site-9ya48e6c-smarttlelearning.wix-vibe.com/"></iframe>
 </div>
 
 </body>
 </html>
-
-
