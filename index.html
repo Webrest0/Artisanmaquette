@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
+
   html, body {
     margin: 0;
     padding: 0;
@@ -14,41 +15,42 @@
     overflow: hidden;
   }
 
-  #frame-container {
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
+  /* Conteneur qui coupe l'intérieur = le vrai secret */
+  #crop {
     position: relative;
+    width: 100%;
+    height: 100vh;     /* Toujours la taille du téléphone / écran */
+    overflow: hidden;  /* Coupe le haut et le bas -> cache la bannière */
   }
 
   iframe {
-    width: 100%;
-    height: 120vh;    /* plus grand que l'écran */
-    border: none;
     position: absolute;
-    left: 0;
+    width: 100%;
+    border: none;
   }
 
-  /* 🟦 Desktop : petit décalage pour cacher la bannière */
+  /* 🟦 ORDINATEUR : petit décalage propre */
   @media (min-width: 769px) {
     iframe {
-      top: -40px;     /* ajuste selon ton écran */
+      top: -50px;      /* ajuste pour cacher la bannière sans manger le haut */
+      height: 120vh;   /* assez grand pour compenser */
     }
   }
 
-  /* 🟩 Mobile : gros décalage pour cacher la bannière sans zoomer */
+  /* 🟩 MOBILE : ajuste uniquement pour mobile */
   @media (max-width: 768px) {
     iframe {
-      top: -120px;    /* valeur adaptée pour téléphone */
-      height: 150vh;  /* plus grand pour compenser */
+      top: -110px;     /* cache la bannière sans zoomer ni couper le haut */
+      height: 160vh;   /* évite de couper le bas */
     }
   }
+
 </style>
 
 </head>
 <body>
 
-<div id="frame-container">
+<div id="crop">
   <iframe src="https://rk7arn-my-site-9ya48e6c-smarttlelearning.wix-vibe.com/"></iframe>
 </div>
 
