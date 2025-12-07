@@ -2,46 +2,41 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Artisan Pro – Version Mobile</title>
-
+<title>Artisan Pro</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
   html, body {
     margin: 0;
-    padding: 0;
     height: 100%;
-    background: #000; /* Cache tout autour */
-  }
-
-  #crop {
-    position: relative;
-    width: 100%;
-    height: 100vh;       /* Toujours pleine hauteur */
-    overflow: hidden;    /* Masque la bande Wix */
+    overflow: hidden;
   }
 
   iframe {
-    position: absolute;
-    left: 0;
     width: 100%;
+    height: 100vh;
     border: none;
   }
-
-  /* 📱 Version mobile — recadrage spécial */
-  iframe {
-    top: -70px;               /* Ajuste pour cacher la barre Wix en haut */
-    height: calc(100vh + 250px); 
-        /* Permet de revoir le footer sans couper */
-  }
 </style>
+
+<script>
+window.onload = () => {
+    const iframe = document.querySelector("iframe").contentWindow;
+
+    // Toutes les 300 ms on supprime la barre Wix si elle réapparaît
+    setInterval(() => {
+        try {
+            const bar = iframe.document.querySelector("[data-testid='sitemenu']") 
+                      || iframe.document.querySelector("#SITE_HEADERinlineContent");
+
+            if (bar) bar.style.display = "none";
+        } catch (e) {}
+    }, 300);
+};
+</script>
+
 </head>
-
 <body>
-
-<div id="crop">
   <iframe src="https://rk7arn-my-site-9ya48e6c-smarttlelearning.wix-vibe.com/"></iframe>
-</div>
-
 </body>
 </html>
