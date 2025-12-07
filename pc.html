@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<title>Artisan Pro – Version PC</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: black;
+    overflow: hidden;
+  }
+
+  /* CONTENEUR QUI DÉFINIT LA FENÊTRE VISIBLE */
+  #crop {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
+
+  iframe {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: calc(100vh * 1.35); /* Ajustement auto selon la hauteur Wix */
+    top: calc(-0.18 * 100vh);   /* Décale automatiquement la zone coupée */
+    border: none;
+  }
+
+  /* Ajustements pour écrans très grands (évite trop de zoom) */
+  @media (min-width: 1600px) {
+    iframe {
+      height: calc(100vh * 1.25);
+      top: calc(-0.14 * 100vh);
+    }
+  }
+
+  /* Ajustements pour écrans petits (évite la coupe excessive) */
+  @media (max-width: 1200px) {
+    iframe {
+      height: calc(100vh * 1.45);
+      top: calc(-0.22 * 100vh);
+    }
+  }
+
+</style>
+</head>
+
+<body>
+
+<div id="crop">
+  <iframe src="https://rk7arn-my-site-9ya48e6c-smarttlelearning.wix-vibe.com/"></iframe>
+</div>
+
+</body>
+</html>
