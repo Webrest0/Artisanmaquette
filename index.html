@@ -2,38 +2,35 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Artisan Pro – Auto Adaptatif</title>
-
+<title>Artisan Pro</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <script>
-// Détection automatique de l'appareil
-document.addEventListener("DOMContentLoaded", function () {
-
-    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+// Détection automatique
+window.onload = () => {
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
+                  || window.innerWidth < 900;
 
     if (isMobile) {
-        window.location.href = "mobile.html";   // VERSION MOBILE
+        window.location.href = "mobile.html";
     } else {
-        window.location.href = "pc.html";       // VERSION PC
+        window.location.href = "pc.html";
     }
-});
+};
 </script>
 
 <style>
 body {
     background: #000;
     color: white;
-    font-family: Arial, sans-serif;
+    font-family: sans-serif;
     text-align: center;
-    padding-top: 40vh;
+    padding-top: 40px;
 }
 </style>
-
 </head>
+
 <body>
-
 Redirection en cours…
-
 </body>
 </html>
