@@ -4,24 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hide Wix Badge</title>
-    <style>
-        /* Cache le badge Wix par défaut */
-        .wix-badge {
-            display: none !important;
-        }
-    </style>
 </head>
 <body>
-    <a href="https://rk7arn-my-site-9ya48e6c-smarttlelearning.wix-vibe.com/ target="_blank">Lien vers Wix</a>
+    <a href="https://rk7arn-my-site-9ya48e6c-smarttlelearning.wix-vibe.com/" target="_blank">Lien vers Wix</a>
     <script>
         // Attendre que le DOM soit complètement chargé
         document.addEventListener('DOMContentLoaded', function() {
-            // Trouver le badge Wix
-            var wixBadge = document.querySelector('.wix-badge');
-            if (wixBadge) {
-                // Simuler un clic sur la croix de fermeture du badge
-                wixBadge.querySelector('.wix-badge-close').click();
-            }
+            // Injecter un script pour masquer le badge Wix
+            var script = document.createElement('script');
+            script.text = `
+                (function() {
+                    function hideWixBadge() {
+                        var badge = document.querySelector('.wix-badge');
+                        if (badge) {
+                            badge.style.display = 'none';
+                        }
+                    }
+
+                    // Vérifier et masquer le badge à intervalle régulier
+                    setInterval(hideWixBadge, 1000);
+                })();
+            `;
+            document.head.appendChild(script);
         });
     </script>
 </body>
