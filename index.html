@@ -2,67 +2,19 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Artisan Pro</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+// Détection : si largeur < 768px → mobile
+if (window.innerWidth < 768) {
+    window.location.href = "mobile.html";
+} else {
+    window.location.href = "pc.html";
+}
+</script>
 
-<style>
-  html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background: #000;
-  }
-
-  #crop {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-  }
-
-  iframe {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    border: none;
-  }
-
-  /* 🖥️ ORDINATEUR — RECADRAGE MODÉRÉ (ne coupe plus le footer !) */
-  @media (min-width: 769px) {
-    iframe {
-      top: -90px;                /* coupe légèrement en haut */
-      height: calc(100vh + 200px); /* laisse réapparaître le bas */
-    }
-  }
-
-  /* 📱 MOBILE — VERSION SÉCURISÉE */
-  @media (max-width: 768px) {
-    iframe {
-      top: -60px;                /* coupe moins qu’avant */
-      height: calc(100vh + 260px); /* permet de revoir le footer */
-    }
-  }
-
-</style>
 </head>
-
-<body>
-
-<div id="crop">
-  <iframe src=https://b9tfwh-my-site-j0gtwq5l-smarttlelearning.wix-vibe.com/iframe>
-</div>
-
+<body style="background:#000; margin:0;">
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
