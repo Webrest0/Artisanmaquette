@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Votre Site WIX</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <iframe id="wix-iframe" src="https://rk7arn-my-site-9ya48e6c-smarttlelearning.wix-vibe.com/"></iframe>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const iframe = document.getElementById('wix-iframe');
+
+      // Fonction pour ajuster la hauteur de l'iframe
+      function adjustIframeHeight() {
+        iframe.style.height = (window.innerHeight - 50) + 'px'; // Ajustez 50px selon la hauteur du badge
+      }
+
+      // Ajuster la hauteur au chargement de la page
+      adjustIframeHeight();
+
+      // Ajuster la hauteur lorsque la fenêtre est redimensionnée
+      window.addEventListener('resize', adjustIframeHeight);
+    });
+  </script>
+</body>
+</html>
