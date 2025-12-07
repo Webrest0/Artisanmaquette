@@ -7,46 +7,46 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-
   html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow: hidden;
+    background: #000;
   }
 
   #crop {
     position: relative;
     width: 100%;
-    height: 100vh; /* toujours plein écran */
+    height: 100vh;
     overflow: hidden;
   }
 
   iframe {
     position: absolute;
+    left: 0;
     width: 100%;
     border: none;
   }
 
-  /* 🟦 ORDINATEUR */
+  /* 🖥️ ORDINATEUR — RECADRAGE MODÉRÉ (ne coupe plus le footer !) */
   @media (min-width: 769px) {
     iframe {
-      top: -230px;                /* on mange beaucoup moins */
-      height: calc(100vh + 380px); /* on révèle de nouveau le bas */
+      top: -90px;                /* coupe légèrement en haut */
+      height: calc(100vh + 200px); /* laisse réapparaître le bas */
     }
   }
 
-  /* 🟩 MOBILE */
+  /* 📱 MOBILE — VERSION SÉCURISÉE */
   @media (max-width: 768px) {
     iframe {
-      top: -90px;                /* petit recadrage haut */
-      height: calc(100vh + 270px); /* footer redevient visible */
+      top: -60px;                /* coupe moins qu’avant */
+      height: calc(100vh + 260px); /* permet de revoir le footer */
     }
   }
 
 </style>
-
 </head>
+
 <body>
 
 <div id="crop">
@@ -55,9 +55,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
