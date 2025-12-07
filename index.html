@@ -1,32 +1,28 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Artisan Pro</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script>
-    // Redirection simple : mobile < 768px vers mobile.html, sinon pc.html
-    document.addEventListener("DOMContentLoaded", function () {
-      if (window.innerWidth <= 768) {
-        window.location.href = "mobile.html";
-      } else {
-        window.location.href = "pc.html";
-      }
-    });
-  </script>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      font-family: sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hide Wix Badge</title>
+    <style>
+        /* Cache le badge Wix par défaut */
+        .wix-badge {
+            display: none !important;
+        }
+    </style>
 </head>
 <body>
-  <p>Redirection en cours…</p>
+    <a href="https://rk7arn-my-site-9ya48e6c-smarttlelearning.wix-vibe.com/ target="_blank">Lien vers Wix</a>
+    <script>
+        // Attendre que le DOM soit complètement chargé
+        document.addEventListener('DOMContentLoaded', function() {
+            // Trouver le badge Wix
+            var wixBadge = document.querySelector('.wix-badge');
+            if (wixBadge) {
+                // Simuler un clic sur la croix de fermeture du badge
+                wixBadge.querySelector('.wix-badge-close').click();
+            }
+        });
+    </script>
 </body>
 </html>
