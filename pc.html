@@ -25,9 +25,13 @@
     position: absolute;
     left: 0;
     width: 100%;
-    height: calc(100vh + 180px); /* ← AJUSTE LE BAS */
-    top: -70px;                 /* ← AJUSTE LE HAUT */
     border: none;
+  }
+
+  /* 🎯 VERSION PC — Calibrage exact */
+  iframe {
+    top: -120px;                /* montre tout le header sans bande noire */
+    height: calc(100vh + 420px); /* garde tout le footer visible */
   }
 </style>
 </head>
