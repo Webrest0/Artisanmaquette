@@ -2,41 +2,49 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Artisan Pro</title>
+<title>Artisan Pro – Mobile</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
   html, body {
     margin: 0;
+    padding: 0;
     height: 100%;
     overflow: hidden;
   }
 
   iframe {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     border: none;
   }
 </style>
 
-<script>
-window.onload = () => {
-    const iframe = document.querySelector("iframe").contentWindow;
-
-    // Toutes les 300 ms on supprime la barre Wix si elle réapparaît
-    setInterval(() => {
-        try {
-            const bar = iframe.document.querySelector("[data-testid='sitemenu']") 
-                      || iframe.document.querySelector("#SITE_HEADERinlineContent");
-
-            if (bar) bar.style.display = "none";
-        } catch (e) {}
-    }, 300);
-};
-</script>
-
 </head>
 <body>
-  <iframe src="https://rk7arn-my-site-9ya48e6c-smarttlelearning.wix-vibe.com/"></iframe>
+
+<iframe id="wix" src="https://rk7arn-my-site-9ya48e6c-smarttlelearning.wix-vibe.com"></iframe>
+
+<script>
+// 🔥 Suppression automatique de la bande Wix
+document.getElementById("wix").addEventListener("load", () => {
+    const iframe = document.getElementById("wix");
+    try {
+        let css = `
+            header, footer, [data-testid="banner"], [data-testid="site-banner"] {
+                display: none !important;
+                height: 0 !important;
+                opacity: 0 !important;
+            }
+        `;
+        let style = iframe.contentDocument.createElement("style");
+        style.innerHTML = css;
+        iframe.contentDocument.head.appendChild(style);
+    } catch(e) {
+        console.warn("Wix bloque l’injection, normal.");
+    }
+});
+</script>
+
 </body>
 </html>
