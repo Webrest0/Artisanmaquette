@@ -2,38 +2,18 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Artisan Pro</title>
-<style>
-  html, body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    height: 100%;
-  }
+<title>Redirection…</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  #wrapper {
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    position: relative;
-    background: #fff;
+<script>
+  if (window.innerWidth <= 768) {
+    window.location.href = "mobile.html";
+  } else {
+    window.location.href = "pc.html";
   }
+</script>
 
-  iframe {
-    position: absolute;
-    top: -20px;         /* Ajuste le haut */
-    left: 0;
-    width: 100%;
-    height: calc(100vh + 80px); /* Ajoute de la hauteur pour cacher la bannière */
-    border: none;
-  }
-</style>
 </head>
-<body>
-
-<div id="wrapper">
-  <iframe src=https://rk7arn-my-site-9ya48e6c-smarttlelearning.wix-vibe.com/></iframe>
-</div>
-
+<body style="background:#000; margin:0;">
 </body>
 </html>
