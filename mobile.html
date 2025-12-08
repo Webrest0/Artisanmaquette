@@ -4,42 +4,54 @@
 <meta charset="UTF-8">
 <title>Artisan Pro – Mobile</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-  html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow: hidden;
-    background: #000;
-  }
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden; /* Le scroll se fait uniquement dans l'iframe */
+        background: #000;
+    }
 
-  #frame-container {
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
-    background: #000;
-  }
+    #frameContainer {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        background: #000;
+    }
 
-  iframe {
-    position: absolute;
-    top: -65px;               /* ← Calibrage iPhone obligatoire */
-    left: 0;
-    width: 100%;
-    height: calc(100vh + 180px);  /* ← Empêche le badge Wix de remonter */
-    border: none;
-  }
+    iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        overflow: scroll;
+    }
 
+    /* 🛡️ CACHE ANTI-WIX (fixe, ne bouge jamais) */
+    #blockWix {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 40px; /* Ajustable si besoin */
+        background: #000;
+        z-index: 99999;
+        pointer-events: none; /* Pour ne pas bloquer le scroll */
+    }
 </style>
 </head>
 
 <body>
 
-<div id="frame-container">
+<div id="frameContainer">
     <iframe src="https://rk7arn-my-site-9ya48e6c-smarttlelearning.wix-vibe.com"></iframe>
 </div>
 
+<!-- Cache noir pour masquer le badge Wix -->
+<div id="blockWix"></div>
+
 </body>
-</html></html></html>
+</html>
