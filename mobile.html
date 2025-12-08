@@ -2,24 +2,37 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Artisan Pro – Mobile</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Artisan Pro — Mobile</title>
+
 <style>
   html, body {
     margin: 0;
     padding: 0;
-    overflow: auto;   /* ✔️ Le site redevient scrollable normalement */
+    height: 100%;
+    overflow: auto;   /* NORMAL pour mobile */
+  }
+
+  #wrapper {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: auto;
   }
 
   iframe {
     width: 100%;
-    height: 100vh;   /* ✔️ Wix contrôle sa propre hauteur */
+    height: 100%;
     border: none;
+    position: relative;  /* PAS de top négatif */
   }
 </style>
-</head>
 
+</head>
 <body>
-  <iframe src="https://rk7arn-my-site-9ya48e6c-smarttlelearning.wix-vibe.com"></iframe>
+
+<div id="wrapper">
+  <iframe src="https://rk7arn-my-site-9ya48e6c-smarttlelearning.wix-vibe.com/"></iframe>
+</div>
+
 </body>
 </html>
