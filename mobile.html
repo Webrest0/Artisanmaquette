@@ -4,8 +4,7 @@
 <meta charset="UTF-8">
 <title>Artisan Pro – Mobile</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
   html, body {
     margin: 0;
@@ -15,42 +14,30 @@
     background: #000;
   }
 
-  #wrapper {
-    position: relative;
+  #crop {
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    position: relative;
   }
 
   iframe {
     position: absolute;
-    top: -120px;   /* Ajuste le haut */
     left: 0;
     width: 100%;
-    height: calc(100vh + 260px); /* Ajuste le bas */
     border: none;
-  }
 
-  /* 🔥 Bande qui masque définitivement le badge Wix 🔥 */
-  #mask-bottom {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 85px; /* Ajuste si nécessaire */
-    background: #000; /* même couleur que le bas du site */
-    z-index: 999999;
+    /* 🎯 Ajustement mobile */
+    top: -120px;  
+    height: calc(100vh + 350px);  
   }
 </style>
 </head>
-
 <body>
 
-<div id="wrapper">
+<div id="crop">
   <iframe src="https://rk7arn-my-site-9ya48e6c-smarttlelearning.wix-vibe.com"></iframe>
 </div>
-
-<div id="mask-bottom"></div>
 
 </body>
 </html>
