@@ -6,14 +6,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <script>
-  if (window.innerWidth <= 768) {
-    window.location.href = "mobile.html";
-  } else {
-    window.location.href = "pc.html";
-  }
+  document.addEventListener("DOMContentLoaded", () => {
+    if (window.innerWidth <= 768) {
+      window.location.href = "mobile.html";
+    } else {
+      window.location.href = "pc.html";
+    }
+  });
 </script>
 
 </head>
-<body style="background:#000; margin:0;">
+<body style="margin:0; background:#fff;">
+Redirection…
 </body>
 </html>
