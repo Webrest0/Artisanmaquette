@@ -4,36 +4,22 @@
 <meta charset="UTF-8">
 <title>Artisan Pro – Mobile</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <style>
   html, body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    background: #000;
-  }
-
-  #wrap {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    position: relative;
+    overflow: auto;   /* ✔️ Le site redevient scrollable normalement */
   }
 
   iframe {
-    position: absolute;
-    top: -55px;                    /* Ajuste la partie haute */
-    left: 0;
     width: 100%;
-    height: calc(100vh + 180px);   /* Empêche totalement le badge */
+    height: 100vh;   /* ✔️ Wix contrôle sa propre hauteur */
     border: none;
   }
 </style>
 </head>
 
 <body>
-<div id="wrap">
   <iframe src="https://rk7arn-my-site-9ya48e6c-smarttlelearning.wix-vibe.com"></iframe>
-</div>
 </body>
 </html>
