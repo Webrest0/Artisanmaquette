@@ -3,55 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <title>Artisan Pro – Mobile</title>
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-    html, body {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        overflow: hidden; /* Le scroll se fait uniquement dans l'iframe */
-        background: #000;
-    }
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+    background: #000;
+  }
 
-    #frameContainer {
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        overflow: hidden;
-        background: #000;
-    }
+  #framebox {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
 
-    iframe {
-        width: 100%;
-        height: 100%;
-        border: none;
-        overflow: scroll;
-    }
+  iframe {
+    position: absolute;
+    top: -85px;               /* Ajuste le haut → tu peux mettre -80 ou -90 si besoin */
+    width: 100%;
+    left: 0;
+    border: none;
 
-    /* 🛡️ CACHE ANTI-WIX (fixe, ne bouge jamais) */
-    #blockWix {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 40px; /* Ajustable si besoin */
-        background: #000;
-        z-index: 99999;
-        pointer-events: none; /* Pour ne pas bloquer le scroll */
-    }
+    /* ⚠️ La partie IMPORTANTE */
+    height: calc(100vh + 480px);  
+  }
 </style>
 </head>
 
 <body>
-
-<div id="frameContainer">
-    <iframe src="https://rk7arn-my-site-9ya48e6c-smarttlelearning.wix-vibe.com"></iframe>
+<div id="framebox">
+  <iframe src="https://rk7arn-my-site-9ya48e6c-smarttlelearning.wix-vibe.com"></iframe>
 </div>
-
-<!-- Cache noir pour masquer le badge Wix -->
-<div id="blockWix"></div>
-
 </body>
-</html>
+</html></html>
