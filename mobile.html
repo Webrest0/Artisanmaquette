@@ -3,39 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <title>Artisan Pro – Mobile</title>
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
   html, body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
     height: 100%;
-    background: #fff;
+    overflow: auto;   /* 👍 on remet le scroll sur mobile */
+    background: #000;
   }
 
   #wrapper {
     width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    position: relative;
+    min-height: 100vh;
+    overflow: visible;  /* 👍 laisse le glissement naturel */
+    background: #000;
   }
 
   iframe {
-    position: absolute;
-    top: -40px;                     /* mobile = un peu plus haut */
-    left: 0;
+    position: relative;
     width: 100%;
-    height: calc(100vh + 160px);    /* mobile = plus haut en bas */
+    height: calc(100vh + 120px); /* 🔧 un peu plus de hauteur */
     border: none;
+    top: -35px;  /* 🔧 remonte légèrement */
   }
 </style>
 </head>
 
 <body>
-<div id="wrapper">
-  <iframe src="https://rk7arn-my-site-9ya48e6c-smarttlelearning.wix-vibe.com/"></iframe>
-</div>
+  <div id="wrapper">
+    <iframe src="https://rk7arn-my-site-9ya48e6c-smarttlelearning.wix-vibe.com"></iframe>
+  </div>
 </body>
 </html>
